@@ -1,4 +1,4 @@
-# DET SOM STÅR I SJÄLVA STORYN ÄR BARA FÖR ATT JAG LÄTTARE SKA KUNNAT FÖLJA VAR JAG BEFINNER MIG I KODEN :D
+# DET SOM STÅR I SJÄLVA STORYN ÄR BARA FÖR ATT JAG LÄTTARE SKA KUNNA FÖLJA VAR JAG BEFINNER MIG I KODEN :D
 
 import time
 
@@ -22,7 +22,7 @@ def floor1_sw(desc, val1, val2, val3):
                      '(2 = Go back to the bedroom)')
             return
         elif choice == str(3):
-            print('You search the room but find nothing of interest inside.')
+            print('You search the room but find nothing of interest.')
         else:
             print('Unknown input, try again.')
 
@@ -72,7 +72,7 @@ def floor1_s(desc, val1, val2, val3):
             print('Unknown input, try again.')
 
 
-print('You awaken in a dark room, it is too dark to distinguish where '
+print('You wake up in a dark room, it is too dark to distinguish where '
       'you are. Your only option is to turn on the lights.')
 while True:
     choice = input(f'''    (1 = Turn on the lights)
