@@ -1,0 +1,81 @@
+import time
+
+def floor1_sw(desc, val1, val2, val3):
+    global choice
+    print(desc)
+    while True:
+        choice = input(f'''    {val1} {val2} {val3}
+''')
+        if choice == str(1):
+            print('You enter the living room. (SOUTH)')
+            floor1_s()
+
+            return
+        elif choice == str(2):
+            print('You enter the closet. (NORTH-WEST)')
+            floor1_w('The closet is tiny, but you find a cabinet with a '
+                     'padlock on it.', '(1 = Attempt to unlock padlock)',
+                     '(2 = Go back to the bedroom.)')
+            return
+        elif choice == str(3):
+            print('You search the room but find nothing of interest inside.')
+        else:
+            print('Unknown input, try again.')
+def floor1_w(desc, val1, val2):
+    global choice
+    print(desc)
+    while True:
+        choice = input(f'''    {val1} {val2}
+''')
+        if choice == str(1):
+            print()  # KOD FÖR ATT ÖPPNA UPP SKÅPET
+            return
+        elif choice == str(2):
+            print('You hear someone walking around in the room next door.')
+            for i in range(3):
+                time.sleep(1)
+                print('...')
+                time.sleep(2)
+            print('You hear the person leave the room as they close'
+                  ' the door behind them.')
+            floor1_sw('You enter the bedroom. (SOUTH-WEST)',
+                      '(1 = Enter living room)', '(2 = Enter closet)',
+                      '(3 = Search the bedroom some more)')
+            return
+        else:
+            print('Unknown input, try again.')
+def floor1_s(desc, val1, val2, val3):
+    global choice
+    print(desc)
+    while True:
+        choice = input(f'''    {val1} {val2} {val3}
+    ''')
+        if choice == str(1):
+            print('You enter the living room.')
+            floor1_w()
+            return
+        elif choice == str(2):
+            print('You enter the tiny closet.')
+            floor1_s()
+            return
+        elif choice == str(3):
+            print('You search the room but find nothing of interest inside.')
+        else:
+            print('Unknown input, try again.')
+
+
+print('You awaken in a dark room, it is too dark to distinguish where '
+      'you are. Your only option is to turn on the lights.')
+while True:
+    choice = input(f'''    (1 = Turn on the lights)
+''')
+    if choice == str(1):
+        print('The lights turn on. You do not recognize where you are but '
+              'you look out the window and realise you are in a bedroom.'
+              ' The floorboards creak above you.')
+        floor1_sw('After the lights turn on you see a living room to your right'
+                  ' and a a closet right in front of you.',
+                  '(1 = Enter living room)',
+                  '(2 = Enter closet)', '(3 = Search the bedroom some more)')
+    else:
+        print('Unknown input, try again.')
