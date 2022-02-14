@@ -2,6 +2,7 @@
 
 import time
 
+
 def floor1_sw(desc, val1, val2, val3):
     global choice
     print(desc)
@@ -10,19 +11,22 @@ def floor1_sw(desc, val1, val2, val3):
 ''')
         if choice == str(1):
             print('You enter the living room. (SOUTH)')
-            floor1_s()
-
+            floor1_s('The living room you are standing in is enormous.',
+                     '(1 = Enter bedroom)', '(2 = Enter stairwell)',
+                     '(3 = Enter office)')
             return
         elif choice == str(2):
-            print('You enter the closet. (NORTH-WEST)')
+            print('You enter the closet. (WEST)')
             floor1_w('The closet is tiny, but you find a cabinet with a '
                      'padlock on it.', '(1 = Attempt to unlock padlock)',
-                     '(2 = Go back to the bedroom.)')
+                     '(2 = Go back to the bedroom)')
             return
         elif choice == str(3):
             print('You search the room but find nothing of interest inside.')
         else:
             print('Unknown input, try again.')
+
+
 def floor1_w(desc, val1, val2):
     global choice
     print(desc)
@@ -30,11 +34,11 @@ def floor1_w(desc, val1, val2):
         choice = input(f'''    {val1} {val2}
 ''')
         if choice == str(1):
-            print()  # KOD FÖR ATT ÖPPNA UPP SKÅPET
+            print()  # KOD FÖR ATT ÖPPNA UPP SKÅPET, RANDOM
             return
         elif choice == str(2):
             print('You hear someone walking around in the room next door.')
-            for i in range(3):
+            for i in range(3):  # KÖRA RANDOM PÅ DENNA DEL?
                 time.sleep(1)
                 print('...')
                 time.sleep(2)
@@ -42,26 +46,28 @@ def floor1_w(desc, val1, val2):
                   ' the door behind them.')
             floor1_sw('You enter the bedroom. (SOUTH-WEST)',
                       '(1 = Enter living room)', '(2 = Enter closet)',
-                      '(3 = Search the bedroom some more)')
+                      '(3 = Search the bedroom)')
             return
         else:
             print('Unknown input, try again.')
+
+
 def floor1_s(desc, val1, val2, val3):
     global choice
     print(desc)
     while True:
         choice = input(f'''    {val1} {val2} {val3}
-    ''')
+''')
         if choice == str(1):
-            print('You enter the living room.')
-            floor1_w()
+            floor1_sw('You enter the bedroom again. (SOUTH-WEST)',
+                      '(1 = Enter living room)', '(2 = Enter closet)',
+                      '(3 = Search the bedroom)')
             return
         elif choice == str(2):
-            print('You enter the tiny closet.')
-            floor1_s()
+            print()
             return
         elif choice == str(3):
-            print('You search the room but find nothing of interest inside.')
+            print()
         else:
             print('Unknown input, try again.')
 
