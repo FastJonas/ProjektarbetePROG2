@@ -1,3 +1,5 @@
+# DET SOM STÅR I SJÄLVA STORYN ÄR BARA FÖR ATT JAG LÄTTARE SKA KUNNAT FÖLJA VAR JAG BEFINNER MIG I KODEN :D
+
 import time
 
 def floor1_sw(desc, val1, val2, val3):
