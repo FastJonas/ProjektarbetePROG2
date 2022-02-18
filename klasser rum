@@ -1,0 +1,45 @@
+import time
+
+
+class Room:
+    def __init__(self,location,floor,object,pathway1,pathway2,pathway3,pathway4):
+        self.plats=location
+        self.object=object
+        self.w=pathway1
+        self.n=pathway2
+        self.e=pathway3
+        self.s=pathway4
+        self.floor=floor
+        
+        
+        
+        
+    def choice(self,nästa_rum):
+        print(f"Du kommer in i {self.plats} och ser dig runt.")
+        time.sleep(3)
+        print(f"Du hittar 3 dörrar. En dörr leder till {self.w}, en annan till {self.n} och sista till{self.e}")
+        val=input("vill du gå till vänster (1), framåt (2), höger(3) eller gå tillbaka (4)?")
+        while True:
+            if val==str(1):
+                print(f"du går in i {self.w}.")
+                return self.choice(nästa_rum)
+            elif val==str(2):
+                print(f"du går in i {self.n}.")
+                return nästa_rum 
+            elif val==str(3):
+                print(f"du går in i {self.e}.")
+                return nästa_rum
+            elif val==str(4):
+                print(f"du går in i {self.s}.")
+                return nästa_rum
+            else:
+                print("Inget alternativ valt, försök igen.")
+
+
+
+
+
+hall=Room("Hallen","1st",0,"sovrummet (vänster)","matsalen (rakt fram)","köket (höger)","vänd tillbaka och gå ut igen")
+sovrummet=Room("sovrummet","1st",1,"garderoben","gästrummet","hallen",None)
+
+hall.choice(sovrummet)
