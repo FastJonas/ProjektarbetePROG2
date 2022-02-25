@@ -58,7 +58,7 @@ class Room:
                 print("Inget alternativ valt, försök igen.")
     
 
-def flytt(self,west,north,east,south):
+def flytt(west,north,east,south):
     if val==str(west):
         west.nytt_rum()
         west.choice()
