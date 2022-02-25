@@ -12,34 +12,79 @@ class Room:
         self.floor=floor
         
         
-        
-        
-    def choice(self,nästa_rum):
-        print(f"Du kommer in i {self.plats} och ser dig runt.")
-        time.sleep(3)
-        print(f"Du hittar 3 dörrar. En dörr leder till {self.w}, en annan till {self.n} och sista till{self.e}")
-        val=input("vill du gå till vänster (1), framåt (2), höger(3) eller gå tillbaka (4)?")
+    def nytt_rum(self):
+         print(f"Du kommer in i {self.plats} och ser dig runt.")
+         time.sleep(3)
+         print(f"Du ser ett antal dörrar")
+         time.sleep(1.5)
+         if self.w !=None:
+            print(f"dörren till vänster leder till {self.w}")
+            time.sleep(1.5)
+         if self.n !=None:
+            print(f"dörren åt norr leder till {self.n}")
+            time.sleep(1.5)
+         if self.e !=None:
+            print(f"dörren till höger leder till {self.e}")
+            time.sleep(1.5)
+         if self.s !=None:
+            print(f"dörren åt söder leder till {self.s}")
+            time.sleep(1.5)
+    
+    
+    
+    
+    def choice(self):
+        global player_room
         while True:
+            val=input(f"vill du gå till {self.w} (1), {self.n} (2), {self.e}(3) eller {self.s} (4)?")
             if val==str(1):
                 print(f"du går in i {self.w}.")
-                return self.choice(nästa_rum)
+                player_room=self.w
+                break
             elif val==str(2):
                 print(f"du går in i {self.n}.")
-                return nästa_rum 
+                player_room=self.n 
+                break
             elif val==str(3):
                 print(f"du går in i {self.e}.")
-                return nästa_rum
+                player_room=self.e
+                break
             elif val==str(4):
                 print(f"du går in i {self.s}.")
-                return nästa_rum
+                player_room=self.s
+                break
             else:
                 print("Inget alternativ valt, försök igen.")
+    
+
+def flytt(west,north,east,south):
+    if player_room==str(west):
+        west.nytt_rum()
+        west.choice()
+    elif player_room==str(north):
+        north.nytt_rum()
+        north.choice()
+    elif player_room==str(east):
+        east.nytt_rum()
+        east.choice()
+    elif player_room==str(south):
+        south.nytt_rum()
+        south.choice()     
+   
 
 
 
 
-
-hall=Room("Hallen","1st",0,"sovrummet (vänster)","matsalen (rakt fram)","köket (höger)","vänd tillbaka och gå ut igen")
+hallen=Room("hallen","1st",0,"sovrummet","matsalen","köket","utsidan")
 sovrummet=Room("sovrummet","1st",1,"garderoben","gästrummet","hallen",None)
+matsalen=Room("matsalen","1st",0,"hallen","köket",None,None)
+köket=Room(None,None,None,None,None,None,None,)
+utsidan=Room(None,None,None,None,None,None,None,)
 
-hall.choice(sovrummet)
+hallen.nytt_rum()
+hallen.choice()
+print(player_room)
+
+flytt(sovrummet,matsalen,köket,utsidan)
+
+sovrummet.nytt_rum()
