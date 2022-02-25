@@ -1,13 +1,12 @@
-# Om mannen hittar dig (inte färdig)
 import random
 import time
-spelare = 3
+player_room="hallen"
+rum=["hallen","sovrummet","matsalen","köket"]
+man=rum[random.randint(0,3)]
 
-man = random.randint(1,9)
- 
 print (man)
 def hittad():
-    if man==spelare:
+    if man==player_room:
         while True:
             svar=int(input("mannen har hittat dig, vill du 1. gömma dig eller 2.springa till ett annat rum?"))
             if svar==1:
@@ -31,5 +30,8 @@ def hittad():
                     break
                 elif val==2:
                     print("mannen blir förvirrad och du lyckas springa iväg")
+                    ##LÄGG TILL ATT MAN HAMNAR I ETT ANNAT RUM OM "SPRINGA IVÄG" LYCKAS
                     break
 
+
+hittad()
