@@ -150,6 +150,6 @@ choice(location)
 
 
 while True:
-    move(val,location)
+    location=move(val,location)
     nytt_rum(location)
     choice(location)
