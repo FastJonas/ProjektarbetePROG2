@@ -3,4 +3,4 @@
 3;0;0;0;1; The closet is tiny, you rummage around but find nothing of interest.;No objects
 4;0:6;10;2; You try to open the door to the grand staircase, but you can't without a key. You see a hallway to the north.;No objects
 5;0;0;6;0; The bathroom is filthy, but you open a cabinet and find a key.;Staircasekey
-6;5;0;0;4; Hallway The door to leave the house is locked. You find an unlocked bathroom to the west.;No objects
+6;5;0;0;4; The door to leave the house is locked. You find an unlocked bathroom to the west.;No objects
