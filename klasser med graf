@@ -2,46 +2,60 @@ import time
 
 
 class Room:
-    def __init__(self,list):
-        self.__plats=int(list[0])
-        self.__n=int(list[1])
-        self.__s=int(list[2])
-        self.__e=int(list[3])
-        self.__w=int(list[4])
-        self.__object=(list[5])
-        self.__info=(list[6])
+    def __init__(self,lista):
+        self.__plats=int(lista[0])
+        self.__w=int(lista[1])
+        self.__n=int(lista[2])
+        self.__e=int(lista[3])
+        self.__s=int(lista[4])
+        self.__object=(lista[5])
+        self.__info=(lista[6])
         
     def get_info(self):
         return self.__info
+    
     def get_object(self):
         return self.__object
+    
     def get_w(self):
         return self.__w
+    
     def get_n(self):
         return self.__n
+    
     def get_e(self):
         return self.__e
+    
     def get_s(self):
         return self.__s
+    
     def get_plats(self):
         return self.__plats
+    
     def set_info(self,new):
         self.__info=new
+    
     def set_object(self,new):
         self.__object=new
+    
     def set_w(self,new):
         self.__w=new
+    
     def set_n(self,new):
         self.__n=new
+    
     def set_e(self,new):
         self.__e=new
+    
     def set_s(self,new):
         self.__s=new
+   
     def set_plats(self,new):
         self.__plats=new
         
+    
 
-def make_temp_dict(file):                  ##create a dict from file
+def make_temp_dict(file):                  
     temp_dict = {}                   
     for line in file:
         new_line = line.strip('\n')
@@ -50,8 +64,8 @@ def make_temp_dict(file):                  ##create a dict from file
         temp_dict[room.get_plats()] = room
     return temp_dict
 
-def create_graph(temp_dict):               ##use dict to create graph
-    for v in temp_dict.values():           ##reset directions to objects
+def create_graph(temp_dict):               
+    for v in temp_dict.values():           
         if v.get_n() != 0:
             v.set_n(temp_dict[v.get_n()])
         else:
@@ -76,80 +90,55 @@ def nytt_rum(room):
     print(f"Du ser ett antal dörrar")
     #time.sleep(1.5)
     if room.get_w() !=None:
-        print(f"dörren till vänster leder till {room.get_w()}")
+        print(f"dörren till vänster leder till {room.get_w()}.")
     #time.sleep(1.5)
     if room.get_n() !=None:
-        print(f"dörren åt norr leder till {room.get_n()}")
+        print(f"dörren åt norr leder till {room.get_n()}.")
     #time.sleep(1.5)
     if room.get_e() !=None:
-        print(f"dörren till höger leder till {room.get_e()}")
+        print(f"dörren till höger leder till {room.get_e()}.")
     #time.sleep(1.5)
     if room.get_s() !=None:
-        print(f"dörren åt söder leder till {room.get_s()}")
+        print(f"dörren åt söder leder till {room.get_s()}.")
     #time.sleep(1.5)
     
     
     
     
 def choice(room):
-    global location
     global val
     while True:
         val=input(f"vill du gå till {room.get_w()} (1), {room.get_n()} (2), {room.get_e()}(3) eller {room.get_s()} (4)?")
         if val==str(1):
             print(f"du går in i {room.get_w()}.")
-            location=room.get_w()
-            break
+            new_location=location.get_w()
+            return new_location
         elif val==str(2):
             print(f"du går in i {room.get_n()}.")
-            location=room.get_n() 
-            break
+            new_location=location.get_n()
+            return new_location
         elif val==str(3):
             print(f"du går in i {room.get_e()}.")
-            location=room.get_e()
-            break
+            new_location=location.get_e()
+            return new_location
         elif val==str(4):
             print(f"du går in i {room.get_s()}.")
-            location=room.get_s()
-            break
+            new_location=location.get_s()
+            return new_location
         else:
             print("Inget alternativ valt, försök igen.")
-    
-  
-   
-
-def move (direction, location):           
-    if (direction == '1' or direction == '1') and location.get_w() != None:
-        new_location = location.get_w()
-        print (new_location.get_info())
-        return new_location
-    
-    elif (direction == '2' or direction == '2') and location.get_n() != None:
-        new_location = location.get_n()
-        print (new_location.get_info())
-        return new_location 
-    elif (direction == '3' or direction == '3') and location.get_e() != None:
-        new_location = location.get_e()
-        print (new_location.get_info())
-        return new_location
-    elif (direction == '4' or direction == '4') and location.get_s() != None:
-        new_location = location.get_s()
-        print (new_location.get_info())
-        return new_location
 
 
 
 file = open('roominfo.txt','r')
-temp_dict = make_temp_dict(file)            ##create a dict from file
-create_graph (temp_dict)                    ##use dict to create graph
+temp_dict = make_temp_dict(file)            
+create_graph (temp_dict)                    
 location = temp_dict[1]
-
 print("intromeddelande: blah blah blah blah blah blah blah")
 nytt_rum(location)
 choice(location)
 
 
 while True:
-    location=move(val,location)
     nytt_rum(location)
-    choice(location)
+    location=choice(location)
