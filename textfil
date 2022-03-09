@@ -4,3 +4,9 @@
 4;0:6;10;2; You try to open the door to the grand staircase, but you can't without a key. You see a hallway to the north.;No objects
 5;0;0;6;0; The bathroom is filthy, but you open a cabinet and find a key.;Staircasekey
 6;5;0;0;4; The door to leave the house is locked. You find an unlocked bathroom to the west.;No objects
+7;0;9;8;0;Kitchen;No objects
+8;7;10;0;0;något rum;No objects
+9;0;11;10;7;Office;No objects
+10;9;12;4;8;Trappa;No objects
+11;0;0;12;9;Guest room;No objects
+12;11;0;0;10;Diningroom;No objects
