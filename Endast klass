@@ -1,0 +1,51 @@
+class Room:
+    def __init__(self,lista):
+        self.__plats=int(lista[0])
+        self.__w=int(lista[1])
+        self.__n=int(lista[2])
+        self.__e=int(lista[3])
+        self.__s=int(lista[4])
+        self.__object=(lista[5])
+        self.__info=(lista[6])
+        
+    def get_info(self):
+        return self.__info
+    
+    def get_object(self):
+        return self.__object
+    
+    def get_w(self):
+        return self.__w
+    
+    def get_n(self):
+        return self.__n
+    
+    def get_e(self):
+        return self.__e
+    
+    def get_s(self):
+        return self.__s
+    
+    def get_plats(self):
+        return self.__plats
+    
+    def set_info(self,new):
+        self.__info=new
+    
+    def set_object(self,new):
+        self.__object=new
+    
+    def set_w(self,new):
+        self.__w=new
+    
+    def set_n(self,new):
+        self.__n=new
+    
+    def set_e(self,new):
+        self.__e=new
+    
+    def set_s(self,new):
+        self.__s=new
+   
+    def set_plats(self,new):
+        self.__plats=new
