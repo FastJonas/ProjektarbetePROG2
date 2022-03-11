@@ -1,0 +1,179 @@
+import time
+
+
+class Room:
+    def __init__(self,lista):
+        self.__plats=int(lista[0])
+        self.__w=int(lista[1])
+        self.__n=int(lista[2])
+        self.__e=int(lista[3])
+        self.__s=int(lista[4])
+        self.__info=(lista[5])
+        self.__object=(lista[6])
+        self.__wname=(lista[7])
+        self.__nname=(lista[8])
+        self.__ename=(lista[9])
+        self.__sname=(lista[10])
+        
+    def get_info(self):
+        return self.__info
+    
+    def get_object(self):
+        return self.__object
+    
+    def get_w(self):
+        return self.__w
+    
+    def get_n(self):
+        return self.__n
+    
+    def get_e(self):
+        return self.__e
+    
+    def get_s(self):
+        return self.__s
+    
+    def get_plats(self):
+        return self.__plats
+
+    def get_wname(self):
+        return self.__wname
+
+    def get_nname(self):
+        return self.__nname
+
+    def get_ename(self):
+        return self.__ename
+
+    def get_sname(self):
+        return self.__sname
+
+    
+    def set_info(self,new):
+        self.__info=new
+    
+    def set_object(self,new):
+        self.__object=new
+    
+    def set_w(self,new):
+        self.__w=new
+    
+    def set_n(self,new):
+        self.__n=new
+    
+    def set_e(self,new):
+        self.__e=new
+    
+    def set_s(self,new):
+        self.__s=new
+   
+    def set_plats(self,new):
+        self.__plats=new
+    
+    
+    def set_wname(self,new):
+        self.__wname=new
+
+    def set_nname(self,new):
+        self.__nname=new
+
+    def set_ename(self,new):
+        self.__ename=new
+
+    def set_sname(self,new):
+        self.__sname=new
+    
+
+
+    
+        
+    
+
+def make_temp_dict(file):                  
+    temp_dict = {}                   
+    for line in file:
+        new_line = line.strip('\n')
+        lista = new_line.split(';')
+        room = Room(lista)
+        temp_dict[room.get_plats()] = room
+    return temp_dict
+
+def create_graph(temp_dict):               
+    for v in temp_dict.values():           
+        if v.get_n() != 0:
+            v.set_n(temp_dict[v.get_n()])
+        else:
+            v.set_n(None)
+        if v.get_s() != 0:
+            v.set_s(temp_dict[v.get_s()])
+        else:
+            v.set_s(None)
+        if v.get_e() != 0:
+            v.set_e(temp_dict[v.get_e()])
+        else:
+            v.set_e(None)
+        if v.get_w() != 0:
+            v.set_w(temp_dict[v.get_w()])
+        else:
+            v.set_w(None)    
+    
+    
+def nytt_rum(room):
+    print(f"Du kommer in i  {room.get_info()} och ser dig runt.")
+    #time.sleep(3)
+    print(f"Du ser ett antal dörrar")
+    #time.sleep(1.5)
+    if room.get_w() !=None:
+        print(f"dörren till vänster leder till {room.get_wname()}.")
+    #time.sleep(1.5)
+    if room.get_n() !=None:
+        print(f"dörren åt norr leder till {room.get_nname()}.")
+    #time.sleep(1.5)
+    if room.get_e() !=None:
+        print(f"dörren till höger leder till {room.get_ename()}.")
+    #time.sleep(1.5)
+    if room.get_s() !=None:
+        print(f"dörren åt söder leder till {room.get_sname()}.")
+    #time.sleep(1.5)
+    
+    
+    
+    
+def choice(room):
+    global val
+    while True:
+        
+        val=input(f"Du har nedanstående alternativ: \n (1) Gå till{room.get_wname()}\n (2) Gå till {room.get_nname()},\n (3) Gå till {room.get_ename()}\n (4) Gå till {room.get_sname()}\n Skriv in ditt val:")
+        if val==str(1):
+            print(f"du går in i {room.get_wname()}.")
+            new_location=location.get_w()
+            return new_location
+        elif val==str(2):
+            print(f"du går in i {room.get_nname()}.")
+            new_location=location.get_n()
+            return new_location
+        elif val==str(3):
+            print(f"du går in i {room.get_ename()}.")
+            new_location=location.get_e()
+            return new_location
+        elif val==str(4):
+            print(f"du går in i {room.get_sname()}.")
+            new_location=location.get_s()
+            return new_location
+        else:
+            print("Inget alternativ valt, försök igen.")
+
+
+
+file = open('speltext.txt','r')
+temp_dict = make_temp_dict(file)            
+create_graph (temp_dict)                    
+location = temp_dict[1]
+
+
+
+
+
+while True:
+    nytt_rum(location)
+    location=choice(location)
