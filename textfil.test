@@ -1,0 +1,12 @@
+1;0;3;2;0;sovrummet.;No objects;;köket;vardagsrummet;
+2;1;4;0;0;vardagsrummet.;No objects;sovrummet;trapprummet;;
+3;0;0;4;1;köket.;No objects;;;trapprummet;sovrummet
+4;3;6;10;2;trappan.;No objects;köket;hallen;Gå upp till övervångingen;vardagsrummet
+5;0;0;6;0;badrummet.;Staircasekey;;;hallen;
+6;5;0;0;4;utgången;No objects;badrummet;;;trapprummet
+7;0;9;8;0;gästrummet;No objects;;vardagsrummet övervåning;kontoret;
+8;7;10;0;0;kontoret;No objects;gästrummet;trapprummet;;
+9;0;11;10;7;vardagsrummet på övervåning;No objects;;badrummet övervåning;trapprummet;gästrummet
+10;9;12;4;8;Trappa;No objects;;vardagsrummet övervåning;sovrummet övervåning;Gå ner till nedervåningen
+11;0;0;12;9;badrummet på övervåningen;No objects;;;sovrummet övervåning;vardagsrummet övervåning
+12;11;0;0;10;sovrummet på övervåningen;No objects;badrummet övervåning;;;trapprummet
