@@ -1,8 +1,10 @@
-from Rum import Room
+from rum import Room
 from val import choice
 from funktioner import pick_up_object
 from funktioner import nytt_rum
+from funktioner import door
 from Man import hittad
+
 
 def make_temp_dict(file):                  
     temp_dict = {}                   
@@ -40,6 +42,7 @@ location = temp_dict[1]
 pocket = []
 
 while True:
+    door(location,pocket)
     nytt_rum(location)
     pick_up_object(location, pocket)
     hittad(location, pocket)
