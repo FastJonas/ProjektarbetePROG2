@@ -1,8 +1,7 @@
-
 import random
 import time
 import sys
-from Rum import Room
+from rum import Room
 from funktioner import nytt_rum
 
 def hittad(location, pocket):
@@ -22,8 +21,8 @@ def hittad(location, pocket):
 
         while True:
             time.sleep(2)
-            svar=int(input("You have the following options: \n(1) Hide in the room \n(2) Sneak into another room \n \nEnter your choice: "))
-            if svar==1:
+            svar=input("You have the following options: \n(1) Hide in the room \n(2) Sneak into another room \n \nEnter your choice: ")
+            if svar=="1":
                 print(('You are hiding...').center(170))
                 time.sleep(5)
                 val=random.randint(1,2)
@@ -38,8 +37,9 @@ def hittad(location, pocket):
                     print(('But the man does not see you and moves on to another room!').center(170))
                     time.sleep(4)
                     break
-
-            if svar==2:
+                else:
+                    print("You did not enter any of the options... Try again:")
+            if svar=="2":
                 print(('You sneaks off to another room').center(170))
                 time.sleep(5)
                 val=random.randint(1,2)
@@ -53,11 +53,12 @@ def hittad(location, pocket):
                     print(('The man gets confused after hearing something, but he did not see you!').center(170))
                     time.sleep(4)
                     if location.get_plats()>=1 and location.get_plats()<=6: 
-                        location.get_plats=random.randint(1,6)
-                        break
+                        location=random.randint(1,6)
+                        return location
                     else: 
-                        location.get_plats=random.randint(7,12)
-                        break
-
+                        location=random.randint(7,12)
+                        return location
+                else:
+                    print("You did not enter any of the options... Try again:")
             else:
                 print("You did not enter any of the options... Try again:")
