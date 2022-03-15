@@ -1,0 +1,63 @@
+
+import random
+import time
+import sys
+from Rum import Room
+from funktioner import nytt_rum
+
+def hittad(location, pocket):
+    
+    rum=[1,2,3,4,5,6,7,8,9,10,11,12]
+
+    if location.get_plats() >=1 and location.get_plats() <=5: 
+        man=rum[random.randint(0,5)]
+    else:
+        man=rum[random.randint(6,11)]
+
+    if man==location.get_plats():
+        print('\n'*4)
+        time.sleep(3)
+        print(('All of a sudden, you hear that someone is on their way into the room...').center(170))
+        print('\n'*4)
+
+        while True:
+            time.sleep(2)
+            svar=int(input("You have the following options: \n(1) Hide in the room \n(2) Sneak into another room \n \nEnter your choice: "))
+            if svar==1:
+                print(('You are hiding...').center(170))
+                time.sleep(5)
+                val=random.randint(1,2)
+                if val==1:
+                    print(('The man sees you and manages to catch you...').center(170))
+                    print('\n'*5)
+                    print(('GAME OVER').center(170))
+                    sys.exit()
+
+                elif val==2:
+                    print(('A man walks right next to you...').center(170))
+                    print(('But the man does not see you and moves on to another room!').center(170))
+                    time.sleep(4)
+                    break
+
+            if svar==2:
+                print(('You sneaks off to another room').center(170))
+                time.sleep(5)
+                val=random.randint(1,2)
+
+                if val==1:
+                    print(('The man sees you and manages to catch you...').center(170))
+                    print(('GAME OVER').center(170))
+                    sys.exit()
+
+                elif val==2:
+                    print(('The man gets confused after hearing something, but he did not see you!').center(170))
+                    time.sleep(4)
+                    if location.get_plats()>=1 and location.get_plats()<=6: 
+                        location.get_plats=random.randint(1,6)
+                        break
+                    else: 
+                        location.get_plats=random.randint(7,12)
+                        break
+
+            else:
+                print("You did not enter any of the options... Try again:")
