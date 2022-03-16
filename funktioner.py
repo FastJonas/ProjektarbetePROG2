@@ -31,46 +31,42 @@ def nytt_rum(room):
 
 
 def pick_up_object(location, pocket):
-    print(('Do you want to search the room for objects?').center(170))
-    while True:
-        objektval=input('You have the following options:\n(1) Yes\n(2) No\n\nEnter your choice: ')
-        if objektval=="1":
-            if location.get_object() != 'No objects':
-                if location.get_object() not in pocket:
-                    print((f'You see a {location.get_object()}.').center(170))
-                    choice_object = input(f'You have the following options:\n(1) Pick up {location.get_object()}\n(2) Do not pick up the {location.get_object()}.\nEnter your choice: ')
+    if location.get_object() != 'No objects':
+        while True:
+            if location.get_object() not in pocket:
+                print((f'You find a {location.get_object()}.').center(170))
+                choice_object = input(f'You have the following options:\n(1) Pick up \n(2) Do not pick up\n\nEnter your choice: ')
 
-                    if choice_object == str(1):
-                        föremål_ryggsäck = pocket.append(location.get_object())
-                        return föremål_ryggsäck
-                        
-                else:
+                if choice_object == str(1):
+                    föremål_ryggsäck = pocket.append(location.get_object())
+                    print('\n' * 50)
+                    print((f'You pick up the {location.get_object()} and put it in your pocket.').center(170))
+                    print((f'You are still in the {location.get_platsname()}.').center(170))
+                    return föremål_ryggsäck
+                    
+                elif choice_object == str(2):
                     print(('No objects were found.').center())
                     break
-                
-            else:
-                print(("No objects were found.").center(170))
-                break
             
-        elif objektval=="2":
-            return
-        else:
-            print("You did not enter any of the options... Try again:\n")
+                else:
+                    print("You did not enter any of the options... Try again:\n")
 
 
 def door(room,pocket):
-    if room.get_plats()==13:
-        print("\n"*15)
+    if room.get_platsname()=='front door':
+        print("\n"*50)
         print(("The door has a padlock, you need to enter the correct sequence of numbers to GET OUT OF THE HOUSE").center(170))
         print("\n"*3)
         while True:
             doorchoice=input("You have the following options:\n(1) Enter the code\n(2) Stop trying\n\nEnter your choice: ")
             print("\n"*3)
             if doorchoice=="1":
+                
+                print('\n' * 50)
+                print("In your pockets there is")
                 for elem in pocket:
                     if pocket != []:
-                        print("In your pockets there is")
-                        print ("a",elem)
+                        print ("- a",elem)
                         
                 print(('You now have this padlock infront of you.\n').center(170))
                 print(('|1|2|3|').center(170))
@@ -78,7 +74,7 @@ def door(room,pocket):
                 print(('|7|8|9|').center(170))
                 print(('|0|').center(170))
                 print('\n')
-                print(('The correct code contains of 4 digits.').center(170))
+                print(('The correct code consists of 4 digits.').center(170))
                 print('\n'*3)
                 code=input("Enter the correct code: ")
                 if code=="7241":
@@ -87,6 +83,7 @@ def door(room,pocket):
                 else: 
                     print(("You entered the wrong code").center(170))
                     time.sleep(2)
+                    print('\n'*50)
             elif doorchoice=="2":
                 break
             else:
