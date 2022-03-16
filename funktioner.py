@@ -45,11 +45,13 @@ def pick_up_object(location, pocket):
                     return föremål_ryggsäck
                     
                 elif choice_object == str(2):
-                    print(('No objects were found.').center())
                     break
             
                 else:
                     print("You did not enter any of the options... Try again:\n")
+            else:
+                break
+
 
 
 def door(room,pocket):
