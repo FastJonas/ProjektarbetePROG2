@@ -98,3 +98,16 @@ def intro():
     print(("Your objective is to get out without being caught").center(170))
     print("\n"*3)
     time.sleep(6)
+    
+    
+def try_again():
+    while True:
+        answer=input("press (1) to try again\npress (2) to exit the game\n\nenter your choice: ")
+        if answer=="1":
+            print(("Good luck").center(170))
+            return 1
+        elif answer=="2":
+            print(("Thank you for playing, welcome back.").center(170))
+            return 0
+        else:
+            print("You did not enter any of the options... Try again:")
