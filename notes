@@ -37,9 +37,9 @@ def notes(number):
         arrow.circle(5)
 
     # lines
-    k = 0; n = 12; y = 340
+    k = 0; n = 24; y = 330
     while k < n:
-        k += 1; y -= 40
+        k += 1; y -= 20
         arrow.width(1)
         arrow.penup()
         arrow.goto(-197, y)
