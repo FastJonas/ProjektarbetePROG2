@@ -42,21 +42,21 @@ def notes(number):
         k += 1; y -= 40
         arrow.width(1)
         arrow.penup()
-        arrow.goto(-170, y)
+        arrow.goto(-197, y)
         arrow.pendown()
         arrow.lt(90)
-        arrow.fd(350)
+        arrow.fd(400)
         arrow.rt(90)
 
+    # redline
     arrow.penup()
-    arrow.goto(-155, 315)
+    arrow.goto(-165, 327)
     arrow.pendown()
     arrow.color('red')
-    arrow.fd(470)
+    arrow.fd(495)
     arrow.color('black')
 
     turtle.exitonclick()
 
 
 notes(7)
-
