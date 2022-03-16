@@ -4,8 +4,8 @@ from funktioner import pick_up_object
 from funktioner import nytt_rum
 from funktioner import door
 from Man import hittad
-
-
+from funktioner import intro
+import sys
 def make_temp_dict(file):                  
     temp_dict = {}                   
     for line in file:
@@ -33,17 +33,21 @@ def create_graph(temp_dict):
             v.set_w(temp_dict[v.get_w()])
         else:
             v.set_w(None)    
-
 file = open('speltext.txt','r')
 temp_dict = make_temp_dict(file)            
-create_graph (temp_dict)                    
-location = temp_dict[1]
-
-pocket = []
-
+create_graph (temp_dict)
 while True:
-    door(location,pocket)
-    nytt_rum(location)
-    pick_up_object(location, pocket)
-    hittad(location, pocket)
-    location=choice(location, pocket)
+                        
+    location = temp_dict[1]
+    pocket = []
+    intro()
+    while True:
+        door(location,pocket)
+        nytt_rum(location)
+        pick_up_object(location, pocket)
+        slut=hittad(location, pocket)
+        if slut==1:
+            break
+        elif slut==0:
+            sys.exit()
+        location=choice(location, pocket)
