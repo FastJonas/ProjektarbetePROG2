@@ -1,0 +1,56 @@
+import turtle
+turtle.tracer(False)
+
+def notes(number):
+    arrow = turtle.Turtle()
+    arrow.hideturtle()
+    arrow.speed(0)
+    # Pappret
+    arrow.goto(-200, -170)
+    arrow.begin_fill()
+    arrow.fillcolor('beige')
+    arrow.width(5)
+    arrow.fd(400)
+    arrow.lt(90)
+    arrow.fd(500)
+    arrow.lt(90)
+    arrow.fd(400)
+    arrow.lt(90)
+    arrow.fd(500)
+    arrow.end_fill()
+
+    #Siffra
+    arrow.penup()
+    arrow.goto(0,0)
+    arrow.pendown()
+    arrow.write(number, font=('arial', 100), align='center')
+
+    # Hålen
+    k = 0; n = 10
+    x = -190; y = 355
+    while k < n:
+        k += 1
+        y -= 50
+        arrow.penup()
+        arrow.goto(x, y)
+        arrow.pendown()
+        arrow.circle(5)
+
+    # lines
+    k = 0; n = 13
+    x = -170; y = 350
+    while k < n:
+        k += 1
+        y -= 40
+        arrow.width(1)
+        arrow.penup()
+        arrow.goto(x, y)
+        arrow.pendown()
+        arrow.lt(90)
+        arrow.fd(350)
+        arrow.rt(90)
+
+
+    turtle.exitonclick()
+
+notes(7)
