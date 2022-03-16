@@ -1,10 +1,12 @@
 import turtle
-turtle.tracer(False)
+
 
 def notes(number):
+    turtle.tracer(False)
     arrow = turtle.Turtle()
     arrow.hideturtle()
     arrow.speed(0)
+
     # Pappret
     arrow.goto(-200, -170)
     arrow.begin_fill()
@@ -19,38 +21,42 @@ def notes(number):
     arrow.fd(500)
     arrow.end_fill()
 
-    #Siffra
+    # Siffra
     arrow.penup()
-    arrow.goto(0,0)
+    arrow.goto(0, 0)
     arrow.pendown()
     arrow.write(number, font=('arial', 100), align='center')
 
     # Hålen
-    k = 0; n = 10
-    x = -190; y = 355
+    k = 0; n = 10; y = 355
     while k < n:
-        k += 1
-        y -= 50
+        k += 1; y -= 50
         arrow.penup()
-        arrow.goto(x, y)
+        arrow.goto(-190, y)
         arrow.pendown()
         arrow.circle(5)
 
     # lines
-    k = 0; n = 13
-    x = -170; y = 350
+    k = 0; n = 12; y = 340
     while k < n:
-        k += 1
-        y -= 40
+        k += 1; y -= 40
         arrow.width(1)
         arrow.penup()
-        arrow.goto(x, y)
+        arrow.goto(-170, y)
         arrow.pendown()
         arrow.lt(90)
         arrow.fd(350)
         arrow.rt(90)
 
+    arrow.penup()
+    arrow.goto(-155, 315)
+    arrow.pendown()
+    arrow.color('red')
+    arrow.fd(470)
+    arrow.color('black')
 
     turtle.exitonclick()
 
+
 notes(7)
+
