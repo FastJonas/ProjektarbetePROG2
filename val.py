@@ -1,5 +1,3 @@
-
-
 def choice(location, ryggsäck):
     global val
 
@@ -52,9 +50,17 @@ def choice(location, ryggsäck):
                 return new_location
 
 
-            elif location.get_wname() == '' and location.get_nname() != '' and location.get_ename() != '':
+            elif location.get_wname() == '' and location.get_nname() != '' and location.get_ename() != '' and location.get_ename() != 'office room':
                 new_location=location.get_e()
                 return new_location
+
+            elif location.get_wname() == '' and location.get_nname() != '' and location.get_ename() == 'office room':
+                if "Officekey" in ryggsäck:
+                    new_location=location.get_e()
+                    return new_location
+                else:
+                    print(('The door to the office is locked! You need a key to get inside').center(170))
+
             
             elif location.get_wname() != '' and location.get_nname() == '' and location.get_ename() == '' and location.get_sname() != '':
                 new_location=location.get_s()
@@ -84,7 +90,7 @@ def choice(location, ryggsäck):
                 if 'Staircasekey' in ryggsäck:
                     new_location=location.get_e()
                     return new_location
-                    
+
                     
                 else:
                     print(('The door to the stairs is locked! You need a key to get go uppstairs!').center(170))
@@ -109,9 +115,21 @@ def choice(location, ryggsäck):
 
 
         elif val ==str(4):
-            if location.get_wname() != '' and location.get_nname() != '' and location.get_ename() != '' and location.get_sname() != '':
+            if location.get_wname() != '' and location.get_nname() != '' and location.get_ename() != '' and location.get_sname() != 'office room' and location.get_sname() != '':
                 new_location=location.get_s()
                 return new_location
+
+            if location.get_wname() != '' and location.get_nname() != '' and location.get_ename() != '' and location.get_sname() == 'office room':
+                
+                if 'Officekey' in ryggsäck:
+                    new_location=location.get_s()
+                    return new_location
+
+                    
+                else:
+                    print(('The door to the office is locked! You need a key to get inside').center(170))
+
+
 
             else:
                 print('There is no room in that direction! Try again:')
