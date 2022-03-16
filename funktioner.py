@@ -91,3 +91,13 @@ def door(room,pocket):
                 break
             else:
                 print("You did not enter any of the options... Try again:")
+
+                
+               
+def intro():
+    print("\n"*15)
+    print(("You wake up in a scary house at night").center(170))
+    print(("You hear something moving around upstairs").center(170))
+    print(("Your objective is to get out without being caught").center(170))
+    print("\n"*3)
+    time.sleep(6)
