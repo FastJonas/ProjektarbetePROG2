@@ -52,8 +52,6 @@ def pick_up_object(location, pocket):
             else:
                 break
 
-
-
 def door(room,pocket):
     if room.get_platsname()=='front door':
         print("\n"*50)
@@ -80,7 +78,9 @@ def door(room,pocket):
                 print('\n'*3)
                 code=input("Enter the correct code: ")
                 if code=="7241":
-                    print(("The door opened and you got out of the house!").center(170))
+                    print(("You entered the correct code").center(170))
+                    print(("and GOT OUT OF THE HOUSE").center(170))
+                    print(("Congratulations and thanks for playing <3").center(170))
                     sys.exit()
                 else: 
                     print(("You entered the wrong code").center(170))
@@ -95,6 +95,10 @@ def door(room,pocket):
                
 def intro():
     print("\n"*15)
+    print(("Welcome to:").center(170))
+    print(("GET OUT OF THE HOUSE").center(170))
+    print(("THE GAME").center(170))
+    print("\n"*5)
     print(("You wake up in a scary house at night").center(170))
     print(("You hear something moving around upstairs").center(170))
     print(("Your objective is to get out without being caught").center(170))
@@ -113,3 +117,4 @@ def try_again():
             return 0
         else:
             print("You did not enter any of the options... Try again:")
+
