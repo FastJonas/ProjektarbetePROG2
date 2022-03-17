@@ -1,14 +1,12 @@
 import random
 import time
-import sys
-from rum import Room
 from funktioner import nytt_rum
 from funktioner import try_again
 def hittad(location, pocket):
     
-    rum=["bedroom upstairs","bathroom upstairs","room with the stairs,","tv room","office room","guest room","hallway","bathroom","room with a staircase","kitchen","liviningroom","bedroom","front door"]
+    rum=["bedroom upstairs","bathroom upstairs","room with the stairs,","tv room","office room","guest room","hallway","bathroom","room with a staircase","kitchen","liviningroom","front door","bedroom"]
     if location.get_platsname()=="hallway" or location.get_platsname()=="bathroom" or location.get_platsname()=="room with a staircase" or location.get_platsname()=="kitchen" or location.get_platsname()=="liviningroom" or location.get_platsname()=="bedroom" or location.get_platsname()=="front door":
-        man=rum[random.randint(6,12)]
+        man=rum[random.randint(6,11)]
     elif location.get_platsname()=="bedroom upstairs" or location.get_platsname()=="bathroom upstairs" or location.get_platsname()=="room with the stairs" or location.get_platsname()=="tv room" or location.get_platsname()=="office room" or location.get_platsname()=="guest room":
         man=rum[random.randint(0,5)]
     
@@ -16,7 +14,7 @@ def hittad(location, pocket):
     if man==location.get_platsname():
         print('\n'*4)
         time.sleep(3)
-        print(('All of a sudden, you hear that someone is on their way into the room...').center(170))
+        print(('All of a sudden, you hear that someone is rummaging around in the room next door...').center(170))
         print('\n'*4)
 
         while True:
