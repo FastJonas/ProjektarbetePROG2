@@ -11,7 +11,7 @@ def pick_up_object(location, pocket):
 
                 if choice_object == str(1):
                     object_pocket = pocket.append(location.get_object())
-                    if location.get_object() == 'Staircasekey' or location.get_object == 'Officekey':
+                    if location.get_object() == 'Staircasekey' or location.get_object() == 'Officekey':
                         rootwindow = turtle.getcanvas().winfo_toplevel()
                         rootwindow.call('wm', 'attributes', '.', '-topmost', '1')
                         rootwindow.call('wm', 'attributes', '.', '-topmost', '0')
