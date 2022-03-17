@@ -1,6 +1,6 @@
 1;0;3;2;0;The lights flicker in the bedroom but you can see that:;No objects;;kitchen;livingroom;;bedroom
 2;1;4;0;0;The liviningroom is enormous and it is very dark and silent. You can still see that:;Note with number _ _ _ 1;bedroom;room with a staircase;;;liviningroom
-3;0;0;4;1;The kitchen + description:;note with number _ 2 _ _;;;room with a staircase;bedroom;kitchen
+3;0;0;4;1;The kitchen + description:;Note with number _ 2 _ _;;;room with a staircase;bedroom;kitchen
 4;3;6;10;2;The staircase room + description:;No objects;kitchen;hallway;second floor;livingroom;room with a staircase
 5;0;0;6;0;bathroom.;Staircasekey;;;hallway;;bathroom
 6;5;13;0;4;hallway + description;No objects;bathroom;front door;;room with a staircase;hallway
@@ -9,5 +9,5 @@
 9;0;11;10;7;tv room + description;Officekey;;bathroom upstairs;room with the stairs;guest room;tv room
 10;9;12;4;8;room with the stairs;No objects;tv room;bedroom upstairs;first floor;office room;room with the stairs
 11;0;0;12;9;bathroom upstairs;No objects;;;bedroom upstairs;Tv room;bathroom upstairs
-12;11;0;0;10;bedroom upstairs;note with number 7 _ _ _;bathroom upstairs;;;room with the stairs;bedroom upstairs
+12;11;0;0;10;bedroom upstairs;Note with number 7 _ _ _;bathroom upstairs;;;room with the stairs;bedroom upstairs
 13;5;0;0;4;front door;No objects;bathroom;;;The staircase room;front door
