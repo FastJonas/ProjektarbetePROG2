@@ -110,10 +110,10 @@ def pick_up_object(location, pocket):
                         t1.forward(160)
                         t1.end_fill()
                         t1.penup()
-                        t1.goto(-125,150)
+                        t1.goto(-150,150)
                         t1.pendown()
                         t1.pensize(10)
-                        t1.write("woooow you found a key!",font=("Bauhaus 93",20,"normal"))
+                        t1.write("(Click on this window to close)",font=("Bodoni MT",20,"normal"))
                         t1.hideturtle()
                         window1.exitonclick()
 
@@ -182,6 +182,9 @@ def pick_up_object(location, pocket):
                         t2.fd(495)
                         t2.color('black')
 
+                        t2.goto(-190,-200)
+                        t2.write("(Click on this window to close)",font=("Bodoni MT",20,"normal"))
+
                         window2.exitonclick()
 
                         try:
@@ -249,6 +252,9 @@ def pick_up_object(location, pocket):
                         t3.fd(495)
                         t3.color('black')
 
+                        t3.goto(-190,-200)
+                        t3.write("(Click on this window to close)",font=("Bodoni MT",20,"normal"))
+
                         window3.exitonclick()
 
                         try:
@@ -315,6 +321,8 @@ def pick_up_object(location, pocket):
                         t4.color('red')
                         t4.fd(495)
                         t4.color('black')
+                        t4.goto(-190,-200)
+                        t4.write("(Click on this window to close)",font=("Bodoni MT",20,"normal"))
 
                         window4.exitonclick()
 
@@ -382,6 +390,8 @@ def pick_up_object(location, pocket):
                         t5.color('red')
                         t5.fd(495)
                         t5.color('black')
+                        t5.goto(-190,-190)
+                        t5.write("(Click on this window to close)",font=("Bodoni MT",20,"normal"))
 
                         window5.exitonclick()
 
