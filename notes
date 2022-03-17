@@ -1,6 +1,6 @@
 import turtle
 
-def notes():
+def notes(number):
     rootwindow = turtle.getcanvas().winfo_toplevel()
     rootwindow.call('wm', 'attributes', '.', '-topmost', '1')
     rootwindow.call('wm', 'attributes', '.', '-topmost', '0')
@@ -27,7 +27,7 @@ def notes():
     arrow.penup()
     arrow.goto(0, 0)
     arrow.pendown()
-    arrow.write(7, font=('arial', 100), align='center')
+    arrow.write(number, font=('arial', 100), align='center')
 
     # Hålen
     k = 0; n = 10; y = 355
