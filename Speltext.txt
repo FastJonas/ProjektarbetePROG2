@@ -1,5 +1,5 @@
 1;0;3;2;0;The lights flicker in the bedroom but you can see that:;No objects;;kitchen;livingroom;;bedroom
-2;1;4;0;0;The liviningroom is enormous and it is very dark and silent. You can still see that:;note with number _ _ _ 1;bedroom;room with a staircase;;;liviningroom
+2;1;4;0;0;The liviningroom is enormous and it is very dark and silent. You can still see that:;Note with number _ _ _ 1;bedroom;room with a staircase;;;liviningroom
 3;0;0;4;1;The kitchen + description:;note with number _ 2 _ _;;;room with a staircase;bedroom;kitchen
 4;3;6;10;2;The staircase room + description:;No objects;kitchen;hallway;second floor;livingroom;room with a staircase
 5;0;0;6;0;bathroom.;Staircasekey;;;hallway;;bathroom
