@@ -7,7 +7,7 @@ def pick_up_object(location, pocket):
                 time.sleep(3)
                 print((f'You find a {location.get_object()}.').center(170))
                 time.sleep(2)
-                choice_object = input(f'You have the following options:\n(1) Pick up \n(2) Do not pick up\n\nEnter your choice: ')
+                choice_object = input(f'You have the following options:\n(1) Pick up \n(2) Leave it\n\nEnter your choice: ')
 
                 if choice_object == str(1):
                     object_pocket = pocket.append(location.get_object())
@@ -390,7 +390,7 @@ def pick_up_object(location, pocket):
                         t5.color('red')
                         t5.fd(495)
                         t5.color('black')
-                        t5.goto(-190,-190)
+                        t5.goto(-190,-200)
                         t5.write("(Click on this window to close)",font=("Bodoni MT",20,"normal"))
 
                         window5.exitonclick()
@@ -401,7 +401,7 @@ def pick_up_object(location, pocket):
                             pass
 
 
-                    print('\n' * 50)
+                    print('\n' * 2)
                     print((f'You pick up the {location.get_object()} and put it in your pocket.').center(170))
                     print((f'You are still in the {location.get_platsname()}.').center(170))
                     return object_pocket
