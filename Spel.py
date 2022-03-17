@@ -1,6 +1,6 @@
 from rum import Room
 from val import choice
-from funktioner import pick_up_object
+from objects import pick_up_object
 from funktioner import nytt_rum
 from funktioner import door
 from Man import hittad
